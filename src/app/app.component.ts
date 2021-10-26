@@ -3,10 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   includeLetters = false;
   includeNumbers = false;
   includeSymbols = false;
@@ -15,28 +14,29 @@ export class AppComponent {
 
   length = 0;
 
-  onChangeUseLetters(){
+  onChangeUseLetters() {
     this.includeLetters = !this.includeLetters;
   }
 
-  onChangeUseNumbers(){
+  onChangeUseNumbers() {
     this.includeNumbers = !this.includeNumbers;
   }
 
-  onChangeUseSymbols(){
+  onChangeUseSymbols() {
     this.includeSymbols = !this.includeSymbols;
   }
 
-  onButtonClick(){
-    this.password = 'myPassword123%';
+  onButtonClick() {
+    const numbers = '0123456789';
+    const letters = 'abcdefghijklmnopqrstuvwxyz';
+    const symbols = '!§$%&/()=?#'
   }
 
-  onChangeLength(value: string){
+  onChangeLength(value: string) {
     const parsedValue = parseInt(value);
 
-    /* if(!isNaN(parsedValue)){
+    if (!isNaN(parsedValue)) {
       this.length = parsedValue;
-
-    } */
     }
+  }
 }

@@ -29,7 +29,33 @@ export class AppComponent {
   onButtonClick() {
     const numbers = '0123456789';
     const letters = 'abcdefghijklmnopqrstuvwxyz';
-    const symbols = '!§$%&/()=?#'
+    const symbols = '!§$%&/()=?#';
+
+    let validChars = '';
+
+    //to insert the letters in validChars
+    if (this.includeLetters) {
+      validChars += letters;
+    }
+
+    //to insert the numbers in validChars
+    if (this.includeNumbers) {
+      validChars += numbers;
+    }
+
+    //to insert the symbols in validChars
+    if (this.includeSymbols) {
+      validChars += symbols;
+    }
+
+    let generatedPassword = '';
+
+    for (let i = 0; i < this.length; i++) {
+      //to find random index to include in the password random values
+      const index = Math.floor(Math.random() * validChars.length);
+      generatedPassword += validChars[index];
+    }
+    this.password = generatedPassword;
   }
 
   onChangeLength(value: string) {
